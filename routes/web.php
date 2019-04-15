@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
+});
+
+Route::get('product/single/{id}', function () {
+    return view('product');
 });
 
 
