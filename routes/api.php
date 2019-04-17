@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::post('register','Api\Auth\RegisterController@register');
 

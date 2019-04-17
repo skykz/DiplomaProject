@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Auth;
 use Illuminate\Http\Request;
 use Laravel\Passport\Client;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Api\Auth\issueToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
