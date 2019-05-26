@@ -22,9 +22,13 @@ Route::post('register','Api\Auth\RegisterController@register');
 Route::post('login','Api\Auth\LoginController@login');
 Route::post('logout','Api\Auth\LoginController@logout');
 Route::post('refresh','Api\Auth\LoginController@refresh');
+//getting list of products from api temza.kz
+Route::get('products','Api\ProductController@show');
+Route::get('listForConsumers/{token}','Api\ProductController@getAllConsumersOrders');
+Route::get('listForCouriers','Api\ProductController@getAllCouriersOrders');
 
 
 Route::middleware('auth:api')->group(function () {
-    Route::post('logout','Api\Auth\LoginController@logout');
+//    Route::post('logout','Api\Auth\LoginController@logout');
 //    return $request->user();
 });

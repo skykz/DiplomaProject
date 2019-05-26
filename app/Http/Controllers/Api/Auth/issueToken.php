@@ -14,13 +14,14 @@ public function issueToken(Request $request,$grantType,$scope="*"){
             'grant_type' => $grantType,
             'client_id' => $this->client->id,
             'client_secret' => $this->client->secret,
+            'password' => $request->password,// just added to test
             'username' => $request->username ?: $request->email,
-            'scope' => $scope
+            'scope' => $scope // i can try to remove it
         ];
 
         $request->request->add($params);
         //        dd($request->all());
-        $proxy =  Request::create('oauth/token','POST');
+        $proxy =  Request::create('/oauth/token','post');
         return Route::dispatch($proxy);
     }
 }

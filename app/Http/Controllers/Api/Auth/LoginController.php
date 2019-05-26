@@ -28,6 +28,23 @@ class LoginController extends Controller
         ]);
 
         return $this->issueToken($request,'password');
+//
+//        $request->request->add([
+//            "grant_type" => "password",
+//            "username" => $request->username,
+//            "password" => $request->password,
+//            'client_id' => $this->client->id,
+//            'client_secret' => $this->client->secret,
+//        ]);
+//
+//        $tokenRequest = $request->create(
+//            env('APP_URL').'/oauth/token',
+//            'post'
+//        );
+//
+//        $instance = Route::dispatch($tokenRequest);
+//
+//        return $instance->getContent();
     }
 
     public function refresh(Request $request){
@@ -35,6 +52,7 @@ class LoginController extends Controller
         $this->validate($request,[
             'refresh_token' => 'required'
         ]);
+
 
         $params = [
             'grant_type' => 'refresh_token',
