@@ -1,9 +1,9 @@
 <html>
 <head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <!------ Include the above in your HEAD tag ---------->
     <style>
         body {
             background: #F1F3FA;
@@ -114,80 +114,6 @@
             min-height: 460px;
         }
     </style>
-
-    <style>
-        html,
-        body {
-            margin: 0;
-            background:#fafafa;
-            z-index:-1;
-            position:relative;
-        }
-        .all {
-
-        }
-
-        .shadow-1:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: inherit;
-            height: inherit;
-            z-index: -2;
-            box-sizing: border-box;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.13);
-        }
-
-        .shadow-1:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: inherit;
-            height: inherit;
-            z-index: -2;
-            box-sizing: border-box;
-            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
-        }
-
-        .card-content {
-            position: relative;
-            height: 80px;
-            cursor: pointer;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            background: #fcf3c9;
-            margin: 10px 40px;
-            transition: 0.4s all;
-        }
-
-        .card-content.open {
-            height: 100px;
-            cursor: pointer;
-            background: #ffd1a1;
-        }
-
-        @media only screen and (min-width: 600px) {
-            .card-content {
-
-                margin-top:20px;
-                margin-bottom:20px;
-                margin-left:10px;
-                margin-right:auto;
-            }
-        }
-
-        @media only screen and (max-device-width: 800px) and (orientation: portrait) {
-            .card-content {
-                margin: 12px 10px;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
@@ -203,12 +129,11 @@
         <div class="col-md-3">
             <div class="profile-sidebar" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.13);">
                 <!-- SIDEBAR USERPIC -->
-
                 <div class="profile-userpic">
                     @if (!Auth::user()->avatar)
-                        <img src="{{asset('storage/users/default.png')}}" class="img-responsive">
+                        <img src="{{asset('storage/users/default.png')}}" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" class="img-responsive">
                     @else
-                        <img src="{{asset('storage')}}/{{Auth::user()->avatar}}" class="img-responsive">
+                        <img src="{{asset('storage')}}/{{Auth::user()->avatar}}" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" class="img-responsive">
                     @endif
                 </div>
 
@@ -218,27 +143,29 @@
                         {{ Auth::user()->name }}
                     </div>
                     <div class="profile-usertitle-job">
-                       Наш классный клиент
+                        Наш классный клиент
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <a href="{{url('/')}}" class="btn btn-success btn-sm"> <i class="glyphicon glyphicon-adjust"></i>  Магазин</a>
+                    <a href="{{url('/')}}" class="btn btn-success btn-sm" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"> <i class="glyphicon glyphicon-adjust"></i>  Магазин</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-log-out"></i> Выйти</a>
+                                                     document.getElementById('logout-form').submit();" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-log-out"></i> Выйти</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
+                <!-- END SIDEBAR BUTTONS -->
+                <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a href="{{url('/home')}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Обзор </a>
                         </li>
-                        <li>
+                        <li >
                             <a href="{{url('/home/profile')}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Настройки профиля</a>
@@ -248,8 +175,8 @@
                                 <i class="glyphicon glyphicon-bookmark"></i>
                                 Мой адрес</a>
                         </li>
-                        <li>
-                            <a  href="{{url('/home/support')}}">
+                        <li class="active">
+                            <a href="{{url('/home/support')}}">
                                 <i class="glyphicon glyphicon-flag"></i>
                                 Служба поддержки </a>
                         </li>
@@ -260,36 +187,17 @@
         </div>
         <div class="col-md-9">
             <div class="profile-content">
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
-                <div class="all">
-                    <div class="cards">
-                        @foreach($data as $dat)
-                        <div class="card-content shadow-1">
-                            <img  style="float: left" src="{{asset('storage')}}/{{$dat->image}}" width="85" height="80">
-                            <h4 style="float: left;margin-left: 10px">{{$dat->title}}</h4>
-                            <p style="float: left;font-size: 15px;margin-top:10px;margin-left: 10px;font-weight: bold">-  {{$dat->price}} тг</p>
-                            <p style="float: left;font-size: 15px;margin-left: 10px;margin-top: 10px">Цвет: <strong>{{$dat->color}}</strong></p>
-                            @if($dat->status == 'PENDING')
-                                <br><span style="background-color: #ff9945;color: white;padding: 7px;border-radius:7px;float: right;margin-right: 10px"><i class="glyphicon glyphicon-time"></i> Ожидается</span>
-                            @elseif($dat->status == 'PUBLISHED')
-                                <br><span style="background-color: #0fad46;color: white;padding: 7px;border-radius:7px;float: right;margin-right: 10px"><i class="glyphicon glyphicon-check"></i> Доставлено</span>
-                            @elseif($dat->status == 'PROCESS')
-                                <br><span style="background-color: #538dd5;color: white;padding: 7px;border-radius:7px;float: right;margin-right: 10px"><i class="glyphicon glyphicon-refresh"></i> В процессе</span>
-                            @endif
-                        </div>
-                            @endforeach
+                <h3><i class="glyphicon glyphicon-wrench"> </i>  Служба поддержки</h3>
+                <br>
+                <hr>
+                <label>Наши телефонные номера</label>
+                <br>
+                <p> Телефон: 8 (778) 446 7834</p>
+                <p> Телефон: 8 (747) 345 3225</p>
 
-                        <?php
-                            if ($data ?? '')
-                                echo $data->render();
-                            ?>
-                    </div>
-                </div>
-                <!-- END .all -->
+                <hr>
+                <label>Служебная почта</label><br>
+                <p> Почта: temza_center@temza.kz</p>
             </div>
         </div>
     </div>
@@ -299,19 +207,4 @@
 </center>
 <br>
 <br>
-<script>
-    $('.card-content').on('click', function() {
-        if ($(this).hasClass('open')) {
-            $('.card-content').removeClass('open');
-            $('.card-content').removeClass('shadow-2');
-            $(this).addClass('shadow-1');
-            return false;
-        } else {
-            $('.card-content').removeClass('open');
-            $('.card-content').removeClass('shadow-2');
-            $(this).addClass('open');
-            $(this).addClass('shadow-2');
-        }
-    });
-</script>
 </body>

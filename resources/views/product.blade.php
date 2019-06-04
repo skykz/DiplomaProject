@@ -57,7 +57,6 @@
             </div>
 
             <!--TODO: change filter & search bars under our requirements
-
             <!-- Filter -->
             <div class="dis-none panel-filter w-full p-t-10">
                 <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">

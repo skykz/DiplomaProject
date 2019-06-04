@@ -51,6 +51,11 @@ Route::group(['prefix' => 'admin'], function () {
 
 // home page route for logged in users
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/profile','HomeController@profile_settings');
+Route::post('/home/profile/update','HomeController@profile_settings_update');
+
+Route::get('/home/support','HomeController@support');
+Route::get('/home/address','HomeController@getAddress');
 
 
 //routes for ajax filters of product

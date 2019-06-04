@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/animate/animate.css')}}">
     <!--===============================================================================================-->
@@ -46,7 +45,6 @@
     <!--===============================================================================================-->
 </head>
 <body class="animsition">
-<!---TODO - translate whole website to russian version -->
 <!-- Header -->
 <header class="header-v4">
     <!-- Header desktop -->
@@ -55,7 +53,7 @@
         <div class="top-bar">
             <div class="content-topbar flex-sb-m h-full container">
                 <div class="left-top-bar">
-                    Бесплатная доставка при покупке от 5000 тг
+                    Бесплатная доставка при покупке от 10.000 тг
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
@@ -63,17 +61,13 @@
                         Помощь & FAQs
                     </a>
 
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                       Мой кабинет
-                    </a>
+                    {{--<a href="#" class="flex-c-m trans-04 p-lr-25">--}}
+                        {{--EN--}}
+                    {{--</a>--}}
 
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        EN
-                    </a>
-
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        USD
-                    </a>
+                    {{--<a href="#" class="flex-c-m trans-04 p-lr-25">--}}
+                        {{--USD--}}
+                    {{--</a>--}}
                 </div>
             </div>
         </div>
@@ -82,8 +76,6 @@
             <nav class="limiter-menu-desktop container">
 
                 <!-- Logo desktop -->
-                <!--TODO: change the logo on the header-->
-
                 <a href="{{url('/')}}" class="logo">
                     <img src="{{asset('images/temza_images/temzalogo.png')}}" alt="IMG-LOGO">
                 </a>
@@ -111,8 +103,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <!---  TODO - add main images to Slider in the main page -->
                 <!-- Icon header -->
                 <div class="wrap-icon-header flex-w flex-r-m">
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
@@ -143,7 +133,6 @@
                         </a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{url('/home')}}">Панель</a></li>
-                                <li><a href="#">Профиль</a></li>
                             </ul>
                     </div>
                         @endguest
@@ -193,18 +182,6 @@
                 <div class="right-top-bar flex-w h-full">
                     <a href="#" class="flex-c-m p-lr-10 trans-04">
                         Помощь & FAQ
-                    </a>
-
-                    <a href="#" class="flex-c-m p-lr-10 trans-04">
-                        Мой кабинет
-                    </a>
-
-                    <a href="#" class="flex-c-m p-lr-10 trans-04">
-                        EN
-                    </a>
-
-                    <a href="#" class="flex-c-m p-lr-10 trans-04">
-                        USD
                     </a>
                 </div>
             </li>
@@ -267,8 +244,6 @@
                 <i class="zmdi zmdi-close"></i>
             </div>
         </div>
-
-        <!-- TODO: create own products from server and work with real goods -->
 
         <div class="header-cart-content flex-w js-pscroll">
             <ul class="header-cart-wrapitem w-full">
@@ -354,8 +329,6 @@
                 <i class="zmdi zmdi-close"></i>
             </div>
         </div>
-
-        <!-- TODO: create own products from server and work with real goods -->
 
         <div class="header-cart-content flex-w js-pscroll">
             <ul class="header-cart-wrapitem w-full">
@@ -440,29 +413,28 @@
                 <h4 class="stext-301 cl0 p-b-30">
                     Категории
                 </h4>
-                <!--- TODO make list of categories from database-->
                 <ul>
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Women
+                            Женский
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Men
+                            Мужской
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Shoes
+                            Обуви
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Watches
+                            Аксессуары
                         </a>
                     </li>
                 </ul>
@@ -482,13 +454,13 @@
 
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Returns
+                            Возварт товара
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Shipping
+                            Доставка
                         </a>
                     </li>
 
@@ -506,6 +478,7 @@
                 </h4>
 
                 <p class="stext-107 cl7 size-201">
+                    <!--TODO: translate all other words in these case-->
                     Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
                 </p>
 
@@ -531,7 +504,7 @@
 
                 <form action="{{route('email/senders')}}" method="post">
                     <div class="wrap-input1 w-full p-b-4">
-                        <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+                        <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com" required>
                         <div class="focus-input1 trans-04"></div>
                     </div>
                         @csrf
@@ -569,7 +542,7 @@
 
             <p class="stext-107 cl6 txt-center">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Все права защищены | Магазин разработан <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Time Company</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Все права защищены | Магазин разработан <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"> Temza LLC </a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
             </p>
@@ -618,8 +591,8 @@
                 <div class="col-md-6 col-lg-5 p-b-30">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
 
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14" id="areaValue">
-                        </h4>
+                        <h3  class="mtext-105 cl2 js-name-detail p-b-14" id="areaValue">
+                        </h3>
 
                         <span class="mtext-106 cl2"  id="price">
 							</span>
@@ -630,24 +603,6 @@
 
                         <!--  -->
                         <div class="p-t-33">
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Размеры
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Choose an option</option>
-                                            <option>Size S</option>
-                                            <option>Size M</option>
-                                            <option>Size L</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="flex-w flex-r-m p-b-10">
                                 <div class="size-204 flex-w flex-m respon6-next">
@@ -875,7 +830,7 @@
             },
             success: function(data){
                 $('.js-modal1').addClass('show-modal1');
-                $('h4').html(data['value']['title']);
+                $('h3').html(data['value']['title']);
                 $('#price').html(data['value']['price'] + ' тг');
                 $("#image").attr('src','{{url('storage')}}/'+data['value']['image']);
                 $("#image1").attr('href','{{url('storage')}}/'+data['value']['image']);

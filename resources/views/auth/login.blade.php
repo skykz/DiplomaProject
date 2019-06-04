@@ -1,13 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .card {
+            background: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            height: 300px;
+            margin: 1rem;
+            position: relative;
+            width: 300px;
+        }
+        .card-1 {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+
+        .card-1:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    </style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Авторизация') }}</div>
 
-                <div class="card-body">
+            <div class="card card-1" style="  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+                <div class="card card-header">{{ __('Авторизация') }}</div>
+
+                <div class="card card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

@@ -28,6 +28,17 @@ Route::get('listForConsumers/{token}','Api\ProductController@getAllConsumersOrde
 Route::get('listForCouriers','Api\ProductController@getAllCouriersOrders');
 
 
+
+//fetching certain product by Id
+Route::get('single/product/{id}','Api\ProductController@getProductById');
+
+//taking order by Courier side
+Route::get('takeOrder/{token}/{id}','Api\ProductController@getTakeOrder');
+//tracking order by User side
+Route::get('getTracking/{id}','Api\ProductController@getTracking');
+
+Route::get('listOfHistoryOrders/{token}','Api\ProductController@getHistoryOfConsumer');
+
 Route::middleware('auth:api')->group(function () {
 //    Route::post('logout','Api\Auth\LoginController@logout');
 //    return $request->user();
